@@ -1,23 +1,32 @@
 
 ```mermaid
-%%{init: {'theme': 'base', 'themeVariables': { 'primaryColor': '#8FAADC', 'fontFamily': 'Noto Sans TC'}}}%%
+%%{init: {'theme': 'base', 'themeVariables': { 'primaryColor': '#8FAADC', 'fontFamily': 'Noto Sans TC', 'tertiaryColor': '#EAF0FB'}}}%%
 gantt
-    title 系統開發專案時程
+    title 系統開發專案時程（含任務模式與起訖日期）
     dateFormat  YYYY-MM-DD
     axisFormat  %m/%d
     todayMarker off
 
-    研擬計畫          :a1, 2025-10-01, 1d
-    任務分配          :a2, after a1, 4d
-    取得硬體          :a3, after a1, 17d
-    安裝硬體          :a5, after a3, 10d
-    程式開發          :a4, after a2, 70d
-    程式測試          :a6, after a4, 30d
-    撰寫使用手冊      :a7, after a5, 25d
-    轉換檔案          :a8, after a5, 20d
-    系統測試          :a9, after a6, 25d
-    使用者訓練        :a10, after a7 a8, 20d
-    使用者測試        :a11, after a9 a10, 25d
+    section 企劃階段
+    1 研擬計畫（企劃）       :done, a1, 2025-10-01, 2025-10-01
+    2 任務分配（企劃）       :a2, 2025-10-02, 2025-10-05
+
+    section 硬體階段
+    3 取得硬體（採購）       :a3, 2025-10-02, 2025-10-19
+    5 安裝硬體（安裝）       :a5, 2025-10-20, 2025-10-29
+
+    section 軟體階段
+    4 程式開發（開發）       :a4, 2025-10-06, 2025-12-15
+    6 程式測試（測試）       :a6, 2025-12-16, 2026-01-14
+
+    section 文件與轉換
+    7 撰寫使用手冊（文件）   :a7, 2025-10-30, 2025-11-23
+    8 轉換檔案（文件）       :a8, 2025-10-30, 2025-11-18
+
+    section 系統整合
+    9 系統測試（測試）       :a9, 2026-01-15, 2026-02-08
+    10 使用者訓練（訓練）    :a10, 2026-02-09, 2026-02-28
+    11 使用者測試（測試）    :a11, 2026-03-01, 2026-03-25
 
 ```
 
